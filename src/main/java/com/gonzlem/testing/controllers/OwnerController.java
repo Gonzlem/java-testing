@@ -1,13 +1,12 @@
 package com.gonzlem.testing.controllers;
 
-import guru.springframework.sfgpetclinic.fauxspring.BindingResult;
-import guru.springframework.sfgpetclinic.fauxspring.Model;
-import guru.springframework.sfgpetclinic.fauxspring.ModelAndView;
-import guru.springframework.sfgpetclinic.fauxspring.WebDataBinder;
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.services.OwnerService;
+import com.gonzlem.testing.services.OwnerService;
+import com.gonzlem.testing.fauxspring.BindingResult;
+import com.gonzlem.testing.fauxspring.Model;
+import com.gonzlem.testing.fauxspring.ModelAndView;
+import com.gonzlem.testing.fauxspring.WebDataBinder;
+import com.gonzlem.testing.model.Owner;
 
-import javax.validation.Valid;
 import java.util.List;
 
 
@@ -24,19 +23,19 @@ public class OwnerController {
         dataBinder.setDisallowedFields("id");
     }
 
-    public String findOwners(Model model){
+    public String findOwners(Model model) {
         model.addAttribute("owner", new Owner(null, null, null));
         return "owners/findOwners";
     }
 
-    public String processFindForm(Owner owner, BindingResult result, Model model){
+    public String processFindForm(Owner owner, BindingResult result, Model model) {
         // allow parameterless GET request for /owners to return all records
         if (owner.getLastName() == null) {
             owner.setLastName(""); // empty string signifies broadest possible search
         }
 
         // find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
+        List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
 
         if (results.isEmpty()) {
             // no owners found
@@ -64,11 +63,11 @@ public class OwnerController {
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processCreationForm(@Valid Owner owner, BindingResult result) {
+    public String processCreationForm(Owner owner, BindingResult result) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
-            Owner savedOwner =  ownerService.save(owner);
+            Owner savedOwner = ownerService.save(owner);
             return "redirect:/owners/" + savedOwner.getId();
         }
     }
@@ -78,7 +77,7 @@ public class OwnerController {
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, Long ownerId) {
+    public String processUpdateOwnerForm(Owner owner, BindingResult result, Long ownerId) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {

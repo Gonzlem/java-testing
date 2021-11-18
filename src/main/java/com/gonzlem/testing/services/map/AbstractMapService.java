@@ -1,6 +1,6 @@
 package com.gonzlem.testing.services.map;
 
-import guru.springframework.sfgpetclinic.model.BaseEntity;
+import com.gonzlem.testing.model.BaseEntity;
 
 import java.util.*;
 

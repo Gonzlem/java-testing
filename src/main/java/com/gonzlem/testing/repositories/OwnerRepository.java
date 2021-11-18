@@ -1,7 +1,7 @@
 package com.gonzlem.testing.repositories;
 
 
-import guru.springframework.sfgpetclinic.model.Owner;
+import com.gonzlem.testing.model.Owner;
 
 import java.util.List;
 

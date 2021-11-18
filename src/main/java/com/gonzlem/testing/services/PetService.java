@@ -1,6 +1,6 @@
 package com.gonzlem.testing.services;
 
-import guru.springframework.sfgpetclinic.model.Pet;
+import com.gonzlem.testing.model.Pet;
 
 /**
  * Created by jt on 7/18/18.

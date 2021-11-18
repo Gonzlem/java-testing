@@ -1,6 +1,6 @@
 package com.gonzlem.testing.repositories;
 
-import guru.springframework.sfgpetclinic.model.Speciality;
+import com.gonzlem.testing.model.Speciality;
 
 public interface SpecialtyRepository extends CrudRepository<Speciality, Long> {
 }

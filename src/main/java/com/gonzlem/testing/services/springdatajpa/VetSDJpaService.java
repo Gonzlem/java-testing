@@ -1,8 +1,8 @@
 package com.gonzlem.testing.services.springdatajpa;
 
-import guru.springframework.sfgpetclinic.model.Vet;
-import guru.springframework.sfgpetclinic.repositories.VetRepository;
-import guru.springframework.sfgpetclinic.services.VetService;
+import com.gonzlem.testing.model.Vet;
+import com.gonzlem.testing.repositories.VetRepository;
+import com.gonzlem.testing.services.VetService;
 
 import java.util.HashSet;
 import java.util.Set;

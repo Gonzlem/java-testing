@@ -1,10 +1,10 @@
 package com.gonzlem.testing.services.springdatajpa;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
-import guru.springframework.sfgpetclinic.repositories.PetRepository;
-import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
-import guru.springframework.sfgpetclinic.services.OwnerService;
+import com.gonzlem.testing.model.Owner;
+import com.gonzlem.testing.repositories.OwnerRepository;
+import com.gonzlem.testing.repositories.PetRepository;
+import com.gonzlem.testing.repositories.PetTypeRepository;
+import com.gonzlem.testing.services.OwnerService;
 
 import java.util.HashSet;
 import java.util.List;

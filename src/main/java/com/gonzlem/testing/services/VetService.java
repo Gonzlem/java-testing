@@ -1,6 +1,6 @@
 package com.gonzlem.testing.services;
 
-import guru.springframework.sfgpetclinic.model.Vet;
+import com.gonzlem.testing.model.Vet;
 
 public interface VetService extends CrudService<Vet, Long>{
 

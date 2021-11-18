@@ -1,6 +1,6 @@
 package com.gonzlem.testing.fauxspring;
 
-import guru.springframework.sfgpetclinic.model.PetType;
+import com.gonzlem.testing.model.PetType;
 
 import java.text.ParseException;
 import java.util.Locale;

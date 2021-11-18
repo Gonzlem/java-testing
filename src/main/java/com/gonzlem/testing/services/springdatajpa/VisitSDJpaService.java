@@ -1,8 +1,8 @@
 package com.gonzlem.testing.services.springdatajpa;
 
-import guru.springframework.sfgpetclinic.model.Visit;
-import guru.springframework.sfgpetclinic.repositories.VisitRepository;
-import guru.springframework.sfgpetclinic.services.VisitService;
+import com.gonzlem.testing.model.Visit;
+import com.gonzlem.testing.repositories.VisitRepository;
+import com.gonzlem.testing.services.VisitService;
 
 import java.util.HashSet;
 import java.util.Set;

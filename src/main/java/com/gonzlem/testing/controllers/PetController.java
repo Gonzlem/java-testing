@@ -1,18 +1,17 @@
 package com.gonzlem.testing.controllers;
 
-import guru.springframework.sfgpetclinic.fauxspring.BindingResult;
-import guru.springframework.sfgpetclinic.fauxspring.Model;
-import guru.springframework.sfgpetclinic.fauxspring.ModelMap;
-import guru.springframework.sfgpetclinic.fauxspring.WebDataBinder;
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import com.gonzlem.testing.fauxspring.BindingResult;
+import com.gonzlem.testing.fauxspring.Model;
+import com.gonzlem.testing.fauxspring.ModelMap;
+import com.gonzlem.testing.fauxspring.WebDataBinder;
+import com.gonzlem.testing.model.Owner;
+import com.gonzlem.testing.model.Pet;
+import com.gonzlem.testing.model.PetType;
+import com.gonzlem.testing.services.OwnerService;
+import com.gonzlem.testing.services.PetService;
+import com.gonzlem.testing.services.PetTypeService;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.validation.Valid;
 import java.util.Collection;
 
 public class PetController {
@@ -49,8 +48,8 @@ public class PetController {
         return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processCreationForm(Owner owner, @Valid Pet pet, BindingResult result, ModelMap model) {
-        if (StringUtils.length(pet.getName()) > 0 && pet.isNew() && owner.getPet(pet.getName(), true) != null){
+    public String processCreationForm(Owner owner, Pet pet, BindingResult result, ModelMap model) {
+        if (StringUtils.length(pet.getName()) > 0 && pet.isNew() && owner.getPet(pet.getName(), true) != null) {
             result.rejectValue("name", "duplicate", "already exists");
         }
         owner.getPets().add(pet);
@@ -69,7 +68,7 @@ public class PetController {
         return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
 
-    public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
+    public String processUpdateForm(Pet pet, BindingResult result, Owner owner, Model model) {
         if (result.hasErrors()) {
             pet.setOwner(owner);
             model.addAttribute("pet", pet);

@@ -1,7 +1,7 @@
 package com.gonzlem.testing.services.map;
 
-import guru.springframework.sfgpetclinic.model.Visit;
-import guru.springframework.sfgpetclinic.services.VisitService;
+import com.gonzlem.testing.model.Visit;
+import com.gonzlem.testing.services.VisitService;
 
 import java.util.Set;
 

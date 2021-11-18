@@ -1,10 +1,10 @@
 package com.gonzlem.testing.services.map;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import com.gonzlem.testing.model.Owner;
+import com.gonzlem.testing.model.Pet;
+import com.gonzlem.testing.services.OwnerService;
+import com.gonzlem.testing.services.PetService;
+import com.gonzlem.testing.services.PetTypeService;
 
 import java.util.List;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.gonzlem.testing.services;
 
-import guru.springframework.sfgpetclinic.model.Speciality;
+import com.gonzlem.testing.model.Speciality;
 
 public interface SpecialtyService extends CrudService<Speciality, Long> {
 }

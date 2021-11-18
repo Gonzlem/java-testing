@@ -1,13 +1,12 @@
 package com.gonzlem.testing.controllers;
 
-import guru.springframework.sfgpetclinic.fauxspring.BindingResult;
-import guru.springframework.sfgpetclinic.fauxspring.WebDataBinder;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.Visit;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.VisitService;
+import com.gonzlem.testing.fauxspring.BindingResult;
+import com.gonzlem.testing.fauxspring.WebDataBinder;
+import com.gonzlem.testing.model.Pet;
+import com.gonzlem.testing.model.Visit;
+import com.gonzlem.testing.services.PetService;
+import com.gonzlem.testing.services.VisitService;
 
-import javax.validation.Valid;
 import java.util.Map;
 
 
@@ -38,7 +37,7 @@ public class VisitController {
         return "pets/createOrUpdateVisitForm";
     }
 
-    public String processNewVisitForm(@Valid Visit visit, BindingResult result) {
+    public String processNewVisitForm(Visit visit, BindingResult result) {
         if (result.hasErrors()) {
             return "pets/createOrUpdateVisitForm";
         } else {

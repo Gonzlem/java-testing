@@ -1,7 +1,7 @@
 package com.gonzlem.testing.services.map;
 
-import guru.springframework.sfgpetclinic.model.Speciality;
-import guru.springframework.sfgpetclinic.services.SpecialtyService;
+import com.gonzlem.testing.model.Speciality;
+import com.gonzlem.testing.services.SpecialtyService;
 
 import java.util.Set;
 

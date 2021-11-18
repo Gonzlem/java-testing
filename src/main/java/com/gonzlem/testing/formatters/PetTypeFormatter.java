@@ -1,8 +1,8 @@
 package com.gonzlem.testing.formatters;
 
-import guru.springframework.sfgpetclinic.fauxspring.Formatter;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import com.gonzlem.testing.fauxspring.Formatter;
+import com.gonzlem.testing.model.PetType;
+import com.gonzlem.testing.services.PetTypeService;
 
 import java.text.ParseException;
 import java.util.Collection;

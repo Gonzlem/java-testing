@@ -1,7 +1,7 @@
 package com.gonzlem.testing.controllers;
 
-import guru.springframework.sfgpetclinic.fauxspring.Model;
-import guru.springframework.sfgpetclinic.services.VetService;
+import com.gonzlem.testing.fauxspring.Model;
+import com.gonzlem.testing.services.VetService;
 
 public class VetController {
 

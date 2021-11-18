@@ -1,6 +1,6 @@
 package com.gonzlem.testing.services;
 
-import guru.springframework.sfgpetclinic.model.Owner;
+import com.gonzlem.testing.model.Owner;
 
 import java.util.List;
 
