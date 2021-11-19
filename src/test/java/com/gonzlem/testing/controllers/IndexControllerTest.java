@@ -2,11 +2,16 @@ package com.gonzlem.testing.controllers;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// jUnit5 lets us pass lambda expressions to handle complex errors as well
+// jUnit lets us change the name it displays when it comes to running our tests.
+// it is a really nice feature to have, mainly because it makes it easier to understand what's being
+// tested.
+
+// It is also important for the "test reports", so they pick a meaningful display name
 class IndexControllerTest {
     IndexController controller;
 
@@ -19,6 +24,7 @@ class IndexControllerTest {
     void tearDown() {
     }
 
+    @DisplayName("Test index controller returns proper view 💻") // Example
     @Test
     void index() {
         assertEquals("index", controller.index());
@@ -26,6 +32,7 @@ class IndexControllerTest {
 //        assertEquals("indexs", controller.index(), () -> "Wrong view returned (with lambda expression error)");
     }
 
+    @DisplayName("Test index controller returns proper 'exception' ☠")
     @Test
     void oupsHandler() {
         assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message to build for my test");
