@@ -1,5 +1,6 @@
 package com.gonzlem.testing.controllers;
 
+import com.gonzlem.testing.exceptions.ValueNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -35,8 +36,8 @@ class IndexControllerTest {
     @DisplayName("Test index controller returns proper 'exception' ☠")
     @Test
     void oupsHandler() {
-        assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive message to build for my test");
-//        assertTrue("failure".equals(controller.oupsHandler()), () -> "This is some expensive message to build for my test");
-
+        assertThrows(ValueNotFoundException.class, () -> {
+            controller.oupsHandler();
+        });
     }
 }
