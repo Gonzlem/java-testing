@@ -1,12 +1,14 @@
 package com.gonzlem.testing.controllers;
 
-import com.gonzlem.testing.exceptions.ValueNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 // jUnit lets us change the name it displays when it comes to running our tests.
 // it is a really nice feature to have, mainly because it makes it easier to understand what's being
@@ -25,19 +27,23 @@ class IndexControllerTest {
     void tearDown() {
     }
 
-    @DisplayName("Test index controller returns proper view 💻") // Example
+    // This one takes the whole 5s of time, it runs the code and after that it returns if it times out
+    @DisplayName("Timeout testing example") // Example
     @Test
-    void index() {
-        assertEquals("index", controller.index());
-//        assertEquals("indexs", controller.index(), "Wrong view returned");
-//        assertEquals("indexs", controller.index(), () -> "Wrong view returned (with lambda expression error)");
+    void testTimeout() {
+        assertTimeout(Duration.ofMillis(100), () -> {
+            Thread.sleep(5000);
+        });
+        System.out.println("It gets here");
     }
 
-    @DisplayName("Test index controller returns proper 'exception' ☠")
+    // Takes only the 100 ms of timeout, if it passes that, it won't continue.
+    @DisplayName("Preemptive timeout testing example")
     @Test
-    void oupsHandler() {
-        assertThrows(ValueNotFoundException.class, () -> {
-            controller.oupsHandler();
+    void testPreemptiveTimeout() {
+        assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
+            Thread.sleep(5000);
         });
+        System.out.println("Never gets here");
     }
 }
